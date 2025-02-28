@@ -4,7 +4,8 @@ Generate completion script
 
 ## Synopsis
 
-To load completions:
+Loading completion is a two step process:
+	First you need to ensure that the kubectl-argo-rollouts can be completed, depending on your shell you can do this:
 	
 	Bash:
 	
@@ -42,6 +43,12 @@ To load completions:
 	  # To load completions for every new session, run:
 	  PS> yourprogram completion powershell > yourprogram.ps1
 	  # and source this file from your PowerShell profile.
+
+	Secondly in order to support completion with kubectl you need to create a file in your path called: kubectl_complete-argo-rollouts with:
+	Bash:
+	  #!/usr/bin/env bash
+	  args=("$@")
+	  kubectl-argo-rollouts __complete "$@"
 	
 
 ```shell
